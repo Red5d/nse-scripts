@@ -4,7 +4,7 @@ stdnse = require "stdnse"
 
 description = [[CVE-2017-12542 HP iLO firmware vuln scanner]]
 
-author = "daniel"
+author = "Red5d"
 license = "Same as Nmap--See http://nmap.org/book/man-legal.html"
 categories = {"discovery"}
 
