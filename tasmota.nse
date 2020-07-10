@@ -18,7 +18,7 @@ action = function(host, port)
 	  local title = stringaux.strsplit("<title>", res.body)[2]
 	  local name = stringaux.strsplit(" - ", title)[1]
 
-	  local versionline = stringaux.strsplit(">Tasmota ", res.body)[2]
+	  local versionline = stringaux.strsplit("Tasmota ", res.body)[2]
 	  local version = stringaux.strsplit(" by ", versionline)[1]
 
 	  output = {}
