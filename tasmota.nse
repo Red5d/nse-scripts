@@ -12,19 +12,19 @@ portrule = shortport.http
 
 action = function(host, port)
 
-
-	res = http.get(host.ip, 80, "/")
+    res = http.get(host.ip, 80, "/")
     if http.response_contains(res, "Tasmota") then
-	  local title = stringaux.strsplit("<title>", res.body)[2]
-	  local name = stringaux.strsplit(" - ", title)[1]
+        local name = res.body:match("<h2>([^<]+)<")
+        local moduleType = res.body:match("<h3>([^<]+)<")
 
-	  local versionline = stringaux.strsplit("Tasmota ", res.body)[2]
-	  local version = stringaux.strsplit(" by ", versionline)[1]
+        local versionline = stringaux.strsplit("Tasmota ", res.body)[2]
+        local version = stringaux.strsplit(" by ", versionline)[1]
 
-	  output = {}
-	  table.insert(output, "Name: " .. name)
-      table.insert(output, "Version: " .. version)
-	  return output
+        output = {}
+        table.insert(output, "Name: " .. name)
+        table.insert(output, "Module: " .. moduleType)
+        table.insert(output, "Version: " .. version)
+        return output
     end
 
 end
