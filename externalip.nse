@@ -7,7 +7,7 @@ description = [[ifconfig.me External IP Lookup]]
 
 author = "Red5d"
 license = "Same as Nmap--See http://nmap.org/book/man-legal.html"
-categories = {"discovery", "safe"}
+categories = {"external"}
 
 -- No host/port/etc requirements for running this script
 prerule = function()
