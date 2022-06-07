@@ -1,6 +1,5 @@
 local shortport = require "shortport"
 local http = require("http")
-local stringaux = require("stringaux")
 local string = require("string")
 
 description = [[ifconfig.me External IP Lookup]]
